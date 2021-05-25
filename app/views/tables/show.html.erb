@@ -1,5 +1,39 @@
-<h1> <%= @table.user.email %></h1>
-<p> <%= @table.address %> </p>
-<p> <%= @table.description %> </p>
+<!-- Show new created offer
+ -->
+<div class="container mt-3 pt-3 w-100 h-100">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="card-product">
+        <img class ="img-offer" src="https://images.unsplash.com/photo-1529316464151-695eb09f22a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80" />
+        <div class="card-product-infos d-flex flex-column justify-content-between h-100 w-100 pb-0">
 
-<%= link_to "Back to home", table_path  %>
+          <h2>Game Name</h2>
+          <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+
+          <p><b> Description:</b></p>
+          <p class="mt-0"> <%= @table.description %></p>
+          <p class="mt-6"><b>Adress:</b>
+          <p class="mt-0"> <%= @table.address %></p>
+<!--           <p class="mt-0"><%= @table.user.email %></p>
+ -->
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="clip-star"></div>
+              <div class="clip-star"></div>
+              <div class="clip-star"></div>
+              <div class="clip-star"></div>
+              <div class="clip-star"></div>
+            </div>
+            <div class="">
+              <a class="btn btn-chat mb-1" href="#">Start chat<%@table.user.email%></a>
+              <a class="btn btn-flat mb-1" href="#">Book game</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= link_to "Back to home", table_path  %>
+
+    </div>
+  </div>
+</div>
