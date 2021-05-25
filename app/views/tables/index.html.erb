@@ -1,11 +1,13 @@
 <h1>All my tables</h1>
 <ul>
-  <% @tables.each do |restaurant|  %>
+  <% @tables.each do |table|  %>
   <li>
-    <h2><%= tables.name %> </h2>
-    <p><%= tables.address %></p>
+    <h2><%= table.user.email %> </h2>
+    <p><%= table.address %></p>
+    <% if table.rating %>
     <% table.rating.times do %>
     ★
+      <% end %>
     <% end %>
     <%= link_to "See more", table_path(table)  %>
   </li>
