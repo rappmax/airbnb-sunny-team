@@ -1,0 +1,6 @@
+<h1> <%= @table.name %></h1>
+<p> <%= @table.booking %> </p>
+<% @table.rating.times do %>
+★
+<% end %>
+<%= link_to "Back to home", table_path  %>

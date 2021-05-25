@@ -1,0 +1,13 @@
+<h1>All my tables</h1>
+<ul>
+  <% @tables.each do |restaurant|  %>
+  <li>
+    <h2><%= tables.name %> </h2>
+    <p><%= tables.address %></p>
+    <% table.rating.times do %>
+    ★
+    <% end %>
+    <%= link_to "See more", table_path(table)  %>
+  </li>
+  <% end %>
+</ul>
