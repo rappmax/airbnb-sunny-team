@@ -32,6 +32,6 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:address, :description)
+    params.require(:table).permit(:name, :address, :description, :picture)
   end
 end

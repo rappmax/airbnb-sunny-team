@@ -5,11 +5,10 @@
     <div class="col-12 col-md-6 offset-md-3">
       <h1>Make an offer</h1>
       <%= simple_form_for table do |t| %>
-       <!-- game name
-       upload picture of table -->
-
+        <%= t.input :name, label: 'Name of the game' %>
         <%= t.input :address %>
         <%= t.input :description %>
+        <%= t.input :picture, as: :file, input_html: { multiple: false }, label: 'Upload picture of your table'%>
         <%= t.submit "Submit", class: 'w-100 btn btn-primary' %>
       <% end %>
     </div>
