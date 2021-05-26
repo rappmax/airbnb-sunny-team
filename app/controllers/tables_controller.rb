@@ -19,7 +19,8 @@ class TablesController < ApplicationController
      @markers = @tables.geocoded.map do |table|
       {
         lat: table.latitude,
-        lng: table.longitude
+        lng: table.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { table: table })
       }
     end
   end
