@@ -14,7 +14,6 @@ class TablesController < ApplicationController
     end
   end
 
-
   def index
     @tables = Table.all
   end
@@ -28,5 +27,4 @@ class TablesController < ApplicationController
   def table_params
     params.require(:table).permit(:address, :description)
   end
-
 end
