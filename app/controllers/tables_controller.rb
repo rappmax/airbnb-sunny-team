@@ -16,6 +16,13 @@ class TablesController < ApplicationController
 
   def index
     @tables = Table.all
+     @markers = @tables.geocoded.map do |table|
+      {
+        lat: table.latitude,
+        lng: table.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { table: table })
+      }
+    end
   end
 
   def show
