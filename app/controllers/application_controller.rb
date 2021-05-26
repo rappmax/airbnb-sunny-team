@@ -3,8 +3,10 @@ class ApplicationController < ActionController::Base
 
   def home
   end
+
+  protected
+
   def configure_permitted_parameters
-    devise_
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :style, :hand])
   end
 end
-
