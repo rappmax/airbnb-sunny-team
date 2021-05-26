@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
 
   def home
   end
-  def configure_permitted_parameters
-    devise_
-  end
+  # def configure_permitted_parameters
+  #   devise_
+  # end
 end
 
