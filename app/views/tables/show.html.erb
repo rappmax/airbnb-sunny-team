@@ -5,15 +5,11 @@
     <div class="col-12 col-md-6 offset-md-3">
       <div class="card-product">
 
-        <div class ="img-offer">
-          <img  src="https://images.unsplash.com/photo-1529316464151-695eb09f22a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80" />
-          <% @table.picture.each do |picture| %>
-          <%= cl_image_tag picture.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
+        <div class ="img img-offer">
+          <%= cl_image_tag @table.picture.key, crop: :fill %>
         </div>
 
         <div class="card-product-infos d-flex flex-column justify-content-between h-100 w-100 pb-0">
-
           <h2><%= @table.name %></h2>
           <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
 
