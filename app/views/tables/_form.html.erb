@@ -1,7 +1,13 @@
-<div class="container">
+<!-- Form to create an offer
+ -->
+<div class="container mt-3 pt-3 w-100 h-100">
   <div class="row">
     <div class="col-12 col-md-6 offset-md-3">
+      <h1>Make an offer</h1>
       <%= simple_form_for table do |t| %>
+       <!-- THESI suggestion: game name
+       THESI suggestion: upload picture of table -->
+
         <%= t.input :address %>
         <%= t.input :description %>
         <%= t.submit "Submit", class: 'w-100 btn btn-primary' %>
