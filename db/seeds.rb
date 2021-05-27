@@ -12,16 +12,22 @@
 
 
 require "open-uri"
+Booking.destroy_all
 Table.destroy_all
 User.destroy_all
 
 vincent = User.create(email:"vincent@gmail.com", password: "123456")
 
 file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+table = Table.create(name: 'Le Wagon Final', description: "Table is outdoors", user_id: vincent.id)
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 table = Table.create(name: 'New Game', description: "Table is outdoors", user_id: vincent.id, date: Date.new(2021,5,28))
+
 
 file = URI.open("https://images.unsplash.com/photo-1564518440696-ef272968778e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHBpbmclMjBwb25nJTIwdGFibGVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
 table = Table.create(name: 'Table tennis', description: "Table is outdoors", user_id: vincent.id)
+
 table.picture.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
@@ -45,7 +51,6 @@ table_three = Table.create(name: "Embassy", address: "Medborgarplatsen 3", descr
 table_three.picture.attach(io: file_three, filename: 'nes.png', content_type: 'image/png')
 
 
-
 thesi = User.create(email: "theresa@gmail.com", password: "123456", username: "ThesiW", style: "The smasher", hand: "Right")
 samir = User.create(email: "samir@gmail.com", password: "123456", username: "Sami", style: "Ruthless", hand: "Left")
 max = User.create(email: "samir@gmail.com", password: "123456", username: "Sami", style: "Ruthless", hand: "Left")
@@ -55,7 +60,3 @@ booking_one = Booking.create(user_id: thesi.id, table_id: table_two.id)
 booking_two = Booking.create(user_id: samir.id, table_id: table_two.id)
 booking_three = Booking.create(user_id: max.id, table_id: table_three.id)
 booking_four = Booking.create(user_id: vincent.id, table_id: table_one.id)
-
-
-
-
