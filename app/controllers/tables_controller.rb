@@ -15,15 +15,28 @@ class TablesController < ApplicationController
   end
 
   def index
-    @tables = Table.all
-     @markers = @tables.geocoded.map do |table|
+    if params[:query].present?
+      sql_query = "address ILIKE :query OR date ILIKE :query"
+      @tables = Table.where(sql_query, query: "%#{params[:query]}%")
+      @markers = @tables.geocoded.map do |table|
       {
         lat: table.latitude,
         lng: table.longitude,
         info_window: render_to_string(partial: "info_window", locals: { table: table })
       }
     end
+    else
+      @tables = Table.all
+      @markers = @tables.geocoded.map do |table|
+      {
+        lat: table.latitude,
+        lng: table.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { table: table })
+      }
+      end
+    end
   end
+
 
   def show
     @table = Table.find(params[:id])
