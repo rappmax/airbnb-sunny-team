@@ -19,13 +19,17 @@
           <p class="mt-0"> <%= @table.address %></p>
 <!--           <p class="mt-0"><%= @table.user.email %></p>
  -->
-          <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-between align-items-center inline-block">
             <div>
+              <p class="pb-1">Player level:</p>
               <div class="clip-star"></div>
               <div class="clip-star"></div>
               <div class="clip-star"></div>
               <div class="clip-star"></div>
               <div class="clip-star"></div>
+              <div class="link">
+              <%= link_to "Back to home", tables_path %>
+              </div>
             </div>
             <div class="">
               <a class="btn btn-chat mb-1" href="#">Start chat<%@table.user.email%></a>
@@ -34,8 +38,6 @@
           </div>
         </div>
       </div>
-
-      <%= link_to "Back to home", table_path  %>
 
     </div>
   </div>

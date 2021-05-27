@@ -1,14 +1,31 @@
 .btn-flat {
   color: white;
+  padding: 4px 12px;
   border-radius: 4px;
   background: #1EDD88;
   transition: background 0.3s ease;
-  max-width: 150px;
-  text-align: center;
-
+  font-size: 13px;
+  width: 80%;
+  float: right;
 }
 
 .btn-flat:hover {
   background: #1BCB7F;
+  color: white;
+}
+
+.btn-chat {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #8DA9C4;
+  transition: background 0.3s ease;
+  width: 80%;
+  font-size: 13px;
+  float: right;
+}
+
+.btn-chat:hover {
+  background: #789ABA;
   color: white;
 }
