@@ -8,6 +8,7 @@
         <%= t.input :name, label: 'Name of the game' %>
         <%= t.input :address %>
         <%= t.input :description %>
+        <%= t.input :date %>
         <%= t.input :picture, as: :file, input_html: { multiple: false }, label: 'Upload picture of your table'%>
         <%= t.submit "Submit", class: 'w-100 btn btn-primary' %>
       <% end %>

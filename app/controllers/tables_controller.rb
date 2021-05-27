@@ -16,24 +16,21 @@ class TablesController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "address ILIKE :query OR date ILIKE :query"
+
+      sql_query = "address ILIKE :query"
       @tables = Table.where(sql_query, query: "%#{params[:query]}%")
-      @markers = @tables.geocoded.map do |table|
-      {
-        lat: table.latitude,
-        lng: table.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { table: table })
-      }
-    end
+      sql_query_date = "DATE(date) = :date"
+      @tables = @tables.where(sql_query_date, date: "%#{params[:date].to_date}%")
     else
       @tables = Table.all
-      @markers = @tables.geocoded.map do |table|
+
+    end
+     @markers = @tables.geocoded.map do |table|
       {
         lat: table.latitude,
         lng: table.longitude,
         info_window: render_to_string(partial: "info_window", locals: { table: table })
       }
-      end
     end
   end
 
@@ -45,6 +42,6 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:name, :address, :description, :picture)
+    params.require(:table).permit(:name, :address, :description, :picture, :date)
   end
 end
