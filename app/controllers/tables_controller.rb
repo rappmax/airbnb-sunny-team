@@ -37,9 +37,9 @@ class TablesController < ApplicationController
     end
   end
 
-
   def show
     @table = Table.find(params[:id])
+    @booking = Booking.new
   end
 
   private
