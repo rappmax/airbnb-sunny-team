@@ -1,0 +1,14 @@
+
+<div class="container mt-3 pt-3 w-100 h-100">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <h1>Add a new Booking</h1>
+        <div class="container">
+          <%= simple_form_for [@table, @booking] do |f| %>
+            <%= f.input :user %>
+            <%= f.submit "Submit", class:'btn btn-primary w-100' %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

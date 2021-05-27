@@ -29,6 +29,7 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+           <%= f.input :picture, as: :file, input_html: { multiple: false }, label: 'Upload your picture'%>
 
         </div>
 
@@ -42,5 +43,7 @@
     </div>
   </div>
 </div>
+
+
 
 
