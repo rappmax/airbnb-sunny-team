@@ -31,7 +31,7 @@ samir.picture.attach(io: pic_three, filename: 'nes.png', content_type: 'image/pn
 
 
 pic_four = URI.open('https://images.unsplash.com/photo-1492446845049-9c50cc313f00?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
-max = User.create(email: "max@gmail.com", password: "123456", username: "max", style: "Ruthless", hand: "Right")
+max = User.create(email: "rappmax@gmail.com", password: "123456", username: "max", style: "Ruthless", hand: "Right")
 max.picture.attach(io: pic_four, filename: 'nes.png', content_type: 'image/png')
 
 
