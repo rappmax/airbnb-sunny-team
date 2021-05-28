@@ -4,16 +4,13 @@
         <h2 class="mt-3">My booking requests:</h2>
 
         <% @bookings.each do |booking| %>
-
         <div class="card-booking mt-3 p-0 text-left">
-
         <div class="card-player d-flex justify-content-start p-3">
            <div>
               <% if user_signed_in? %>
                <%= cl_image_tag current_user.user_picture, class:"avatar-dashboard" %>
               <% end %>
            </div>
-
           <div class="pl-3">
             <h3> <%= booking.user.username  %> </h3>
             <div>
@@ -28,7 +25,6 @@
             </div>
           </div>
         </div>
-
         <div>
           <ul class="pt-3">
             <li>Games won: 10/12</li>
@@ -44,8 +40,6 @@
         </div>
         <% end %>
     </div>
-
-
     <div class="col-12 col-md-6">
         <h2 class="mt-3">Choose a player:</h2>
 
@@ -73,15 +67,13 @@
           </div>
         </div>
 
-
-
-
         <div>
           <ul class="pt-3 pl-0">
             <li>Games won: 10/12</li>
             <li><%= booking.user.hand %> handed</li>
           </ul>
           <div class="buttons d-flex justify-content-between align-items-center">
+
             <% if booking.status == "Pending" %>
 
             <%= link_to "Accept", booking_path(booking, status: "Accepted"), class: "btn-green mv-2", method: "put" %>
