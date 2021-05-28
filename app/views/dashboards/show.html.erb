@@ -42,7 +42,9 @@
     </div>
     <div class="col-12 col-md-6">
         <h2 class="mt-3">Choose a player:</h2>
+
         <% @booking_requests.where(status: "pending").each do |booking| %>
+
         <div class="card-booking mt-3 p-0 text-left">
 
         <div class="card-player d-flex justify-content-start p-3">
@@ -85,11 +87,6 @@
         </div>
         </div>
         <% end %>
-
-
     </div>
-
-
-
   </div>
 </div>

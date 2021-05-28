@@ -1,14 +1,18 @@
 
-.card-product-home{
+.card-product-homepage {
+  position: relative;
+  width: 600px;
+  height: 300px;
+}
+
+.card-product-home {
   display:flex;
   position: relative;
   width: 600px;
   height: 300px;
 }
 
-.img-offer-home{
+.img-offer-home {
   display:flex;
   position:relative;
   right:80px; top:2px;
-}
-
