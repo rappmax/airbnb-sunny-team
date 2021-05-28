@@ -24,7 +24,7 @@ img {
 // }
 
 .card-product h2 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
   top: 10px;
@@ -39,23 +39,26 @@ img {
 }
 
 .card-product .card-product-infos {
-  padding: 8px;
+  padding: 12px;
 }
 
+.btn {
+  margin-top: 50px;
+}
 
-
-.btn-flat {
+.btn-green {
   color: white;
   padding: 4px 12px;
   border-radius: 4px;
   background: #1EDD88;
   transition: background 0.3s ease;
-  font-size: 13px;
-  width: 80%;
+  font-size: 20px;
+  width: 100%;
   float: right;
+
 }
 
-.btn-flat:hover {
+.btn-green:hover {
   background: #1BCB7F;
   color: white;
 }
@@ -88,6 +91,6 @@ img {
 
 .link {
   font-size: 20px;
-  padding-top: 40px;
+  padding-top: 50px;
 }
 
