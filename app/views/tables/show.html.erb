@@ -16,6 +16,7 @@
                <%= cl_image_tag current_user.user_picture, class:"avatar-bordered" %>
               <% end %>
            </div>
+
           <p><b> Description:</b></p>
           <p class="mt-0"> <%= @table.description %></p>
           <p class="mt-6"><b>Adress:</b>
@@ -31,7 +32,7 @@
               <div class="clip-star"></div>
               <div class="clip-star"></div>
               <div class="link">
-              <%= link_to "Back to home", tables_path %>
+                <%= link_to "Back to home", tables_path %>
               </div>
             </div>
             <div class="">

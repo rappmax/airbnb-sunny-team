@@ -14,11 +14,10 @@
                 <div class="card-product-infos d-flex flex-column justify-content-center h-100 w-100 pb-0">
                   <h2 class="mb-2"><%= table.name %></h2>
                   <div>
-                      <% if user_signed_in? %>
-                       <%= cl_image_tag current_user.user_picture, class:"avatar-bordered" %>
-                      <% end %>
+                    <% if user_signed_in? %>
+                     <%= cl_image_tag current_user.user_picture, class:"avatar-bordered" %>
+                    <% end %>
                   </div>
-
 
                   <p class="mt-0 mb-3"><b> "<%= table.description %>" </b></p>
 <!--                   <p class="mt-6"><b>Adress:</b>
