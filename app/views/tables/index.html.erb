@@ -4,17 +4,22 @@
         <h1 class="d-flex justify-content-center mb-3">All games in your area:</h1>
 
           <div class="cards justify-content-between grid-container ">
-
+raise
             <% @tables.each do |table|  %>
-              <div class="card-product grid-items">
-                <div class="img img-offer">
+              <div class="card-product-index grid-items">
+                <div class="img-index img-offer" style="width: 400px;">
                    <%= cl_image_tag table.picture.key, crop: :fit %>
                 </div>
 
-                <div class="card-product-infos d-flex flex-column justify-content-center h-100 w-100 pb-0">
+                <div class="card-product-infos-index d-flex flex-column justify-content-center h-100 w-100 pb-0">
                   <h2 class="mb-2"><%= table.name %></h2>
-                  <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-
+                  <div>
+                    <img class="avatar-bordered" alt="avatar-bordered"
+                      <% if user_signed_in? %>
+                         <%= cl_image_tag current_user.user_picture, class:"avatar dropdown-toggle", id:"navbarDropdown", data: {toggle:"dropdown"} %>
+                      <% end %>
+                      >
+                  </div>
 
                   <p class="mt-0 mb-3"><b> "<%= table.description %>" </b></p>
 <!--                   <p class="mt-6"><b>Adress:</b>
@@ -30,7 +35,7 @@
                         <div class="clip-star"></div>
                         <div class="clip-star"></div>
                       </div> -->
-                      <div class="link mb-3">
+                      <div class="link-index mb-3">
                         <%= link_to "Find out more!", table_path(table) %>
                       </div>
                     </div>

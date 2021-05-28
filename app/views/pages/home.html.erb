@@ -2,22 +2,61 @@
 <!-- Banner -->
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1558433916-90a36b44753f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80);">
     <h1 class="mt-3 pt-3 d-flex justify-content-center">Let's play Ping Pong!</h1>
+    <p class="mt-3 pt-3 d-flex justify-content-center">Select your city and date you want to play</p>
     <div class="d-flex justify-content-center">
 
         <%= form_tag tables_path, method: :get do %>
         <%= date_field_tag :date,
           params[:date],
           class: "form-control",
-          placeholder: Date.today,
-          value: Date.today
+          placeholder: Date.today
         %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Stockholm",
-          value: "Stockholm"
+          placeholder: "Stockholm"
         %>
-        <%= submit_tag "Find me a game", class: "btn-flat mr-2 align-items-center" %>
+        <%= submit_tag "Find game!", class: "btn-flat mr-2 align-items-center" %>
       <% end %>
     </div>
   </div>
+       <div class="cards justify-content-between grid-container ">
+         <%  @tables = Table.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day) %>
+           <% @tables.each do |table|  %>
+             <div class="card-product grid-items">
+                <div class="img img-offer">
+                   <%= cl_image_tag table.picture.key, crop: :fit %>
+                </div>
+
+                <div class="card-product-infos d-flex flex-column justify-content-center h-100 w-100 pb-0">
+                  <h2 class="mb-2"><%= table.name %></h2>
+                  <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+
+
+                  <p class="mt-0 mb-3"><b> "<%= table.description %>" </b></p>
+<!--                   <p class="mt-6"><b>Adress:</b>
+ -->                  <p class="mt-0 "><%= table.address %></p>
+
+                  <div class="d-flex justify-content-between align-items-center inline-block">
+                    <div class="d-flex flex-column">
+                      <!-- <p class="pb-1">Player level:</p>
+                      <div class="d-flex">
+                        <div class="clip-star"></div>
+                        <div class="clip-star"></div>
+                        <div class="clip-star"></div>
+                        <div class="clip-star"></div>
+                        <div class="clip-star"></div>
+                      </div> -->
+                      <div class="link mb-3">
+                        <%= link_to "Find out more!", table_path(table) %>
+                      </div>
+                    </div>
+                    <div class="">
+                      <!-- <a class="btn btn-chat mb-1" href="#">Start chat<%table.user.email%></a> -->
+                      <!-- <a class="btn btn-flat mb-1" href="#">Find out more!</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+      </div>

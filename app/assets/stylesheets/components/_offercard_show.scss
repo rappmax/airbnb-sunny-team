@@ -1,0 +1,103 @@
+.card-product {
+  overflow: hidden;
+  height: 400px;
+  width: 150%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+  margin: 30px;
+  margin-left: 130px;
+}
+
+img {
+  height: 100%;
+  width: 400px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+// .img-offer {
+//   height: 100%;
+//   width: 85%;
+// }
+
+.card-product h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  top: 10px;
+}
+
+.card-product p {
+  font-size: 18px;
+  line-height: 1;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 2px;
+}
+
+.card-product .card-product-infos {
+  padding: 8px;
+}
+
+.avatar-bordered {
+  height: 10%;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 60px;
+  width: 60px;
+}
+
+.btn-flat {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  font-size: 13px;
+  width: 80%;
+  float: right;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-chat {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #8DA9C4;
+  transition: background 0.3s ease;
+  width: 80%;
+  font-size: 13px;
+  float: right;
+}
+
+.btn-chat:hover {
+  background: #789ABA;
+  color: white;
+}
+
+.clip-star {
+  background: gold;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  line-height: 1;
+  float: left;
+}
+
+.link {
+  font-size: 20px;
+  padding-top: 40px;
+}
+

@@ -1,14 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-6">
-
+        <h2>My booking requests:</h2>
 
         <% @bookings.each do |booking| %>
+
         <div class="card-booking mt-3 p-0 text-left">
 
         <div class="card-player d-flex justify-content-start p-3">
-          <div>
-            <img id="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+          <div id="avatar-bordered">
+            <div>
+              <img class="avatar-bordered" alt="avatar-bordered"
+                <% if user_signed_in? %>
+                   <%= cl_image_tag current_user.user_picture, class:"avatar dropdown-toggle", id:"navbarDropdown", data: {toggle:"dropdown"} %>
+                <% end %>
+                >
+            </div>
           </div>
           <div class="pl-3">
             <h3> <%= booking.user.username  %> </h3>
@@ -24,18 +31,23 @@
         </div>
 
         <div>
-          <ul class="p-0">
+          <ul class="pt-3">
             <li>Games won: 10/12</li>
-            <li> <%= booking.user.hand %> handed</li>
+            <li><%= booking.user.hand %> handed</li>
           </ul>
           <div class="buttons d-flex justify-content-between align-items-center">
-            <a class="btn-green mb-2" href="#">Accept</a>
-            <a class="btn-red mb-2" href="#">Decline</a>
+            <a class="btn-orange mb-2" href="#">Status Pending</a>
+            <!-- <a class="btn-green mb-2" href="#">Accept</a>
+            <a class="btn-red mb-2" href="#">Decline</a> -->
           </div>
         </div>
         </div>
         <% end %>
 
     </div>
+
+    <h2>Choose a player:</h2>
+
+
   </div>
 </div>
