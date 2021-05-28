@@ -25,7 +25,7 @@ table.picture.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 file_one = URI.open('https://images.unsplash.com/photo-1611251135345-18c56206b863?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 table_one = Table.create(name: 'Ping Pong', address: "T-Centralen", description: "Great table tennis surface", user_id: vincent.id, date: Date.new(2021,5,28))
-table_one.picture.attach(io: file_two, filename: 'nes.png', content_type: 'image/png')
+table_one.picture.attach(io: file_one, filename: 'nes.png', content_type: 'image/png')
 
 file_two = URI.open('https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHBpbmclMjBwb25nJTIwdGFibGVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 table_two = Table.create(name: 'Pingis', address: "Atlasgatan 4", description: "Great net and bats", user_id: vincent.id, date: Date.new(2021,5,28))
