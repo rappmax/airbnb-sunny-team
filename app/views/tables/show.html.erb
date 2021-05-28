@@ -11,7 +11,9 @@
 
         <div class="card-product-infos d-flex flex-column justify-content-between h-100 w-100 pb-0">
           <h2><%= @table.name %></h2>
-          <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+           <% if user_signed_in? %>
+          <%= cl_image_tag current_user.user_picture, class:"avatar dropdown-toggle", id:"navbarDropdown", data: {toggle:"dropdown"} %>
+          <% end %>
 
           <p><b> Description:</b></p>
           <p class="mt-0"> <%= @table.description %></p>
