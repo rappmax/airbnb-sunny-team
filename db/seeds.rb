@@ -12,17 +12,18 @@
 
 
 require "open-uri"
+Booking.destroy_all
 Table.destroy_all
 User.destroy_all
 
 vincent = User.create(email:"vincent@gmail.com", password: "123456")
 
+
 file = URI.open("https://images.unsplash.com/photo-1564518440696-ef272968778e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHBpbmclMjBwb25nJTIwdGFibGVzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
 table = Table.create(name: 'Table tennis', description: "Table is outdoors", user_id: vincent.id, date: Date.new(2021,5,28))
 table.picture.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-
-file_two = URI.open('https://images.unsplash.com/photo-1611251135345-18c56206b863?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+file_one = URI.open('https://images.unsplash.com/photo-1611251135345-18c56206b863?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 table_one = Table.create(name: 'Ping Pong', address: "T-Centralen", description: "Great table tennis surface", user_id: vincent.id, date: Date.new(2021,5,28))
 table_one.picture.attach(io: file_two, filename: 'nes.png', content_type: 'image/png')
 
@@ -35,17 +36,12 @@ table_three = Table.create(name: "Embassy", address: "Medborgarplatsen 3", descr
 table_three.picture.attach(io: file_three, filename: 'nes.png', content_type: 'image/png')
 
 
-
 thesi = User.create(email: "theresa@gmail.com", password: "123456", username: "ThesiW", style: "The smasher", hand: "Right")
 samir = User.create(email: "samir@gmail.com", password: "123456", username: "Sami", style: "Ruthless", hand: "Left")
 max = User.create(email: "max@gmail.com", password: "123456", username: "max", style: "Ruthless", hand: "Right")
-
 
 booking_one = Booking.create(user_id: thesi.id, table_id: table_two.id)
 booking_two = Booking.create(user_id: samir.id, table_id: table_two.id)
 booking_three = Booking.create(user_id: max.id, table_id: table_three.id)
 booking_four = Booking.create(user_id: vincent.id, table_id: table_one.id)
-
-
-
 
