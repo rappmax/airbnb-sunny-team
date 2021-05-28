@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     @table = Table.find(params[:table_id])
     @booking.table = @table
     @booking.user = current_user
@@ -21,14 +21,12 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def edit
     @booking = Booking.find(params[:id])
-  end
-
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
   end
 
 end
