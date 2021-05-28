@@ -6,15 +6,29 @@
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
-  width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 60px;
+  width: 60px;
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+.avatar-dashboard {
+  height: 60px;
+  width: 60px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  border-radius: 50%;
 }
