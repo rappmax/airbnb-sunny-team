@@ -7,8 +7,14 @@
         <div class="card-booking mt-3 p-0 text-left">
 
         <div class="card-player d-flex justify-content-start p-3">
-          <div>
-            <img id="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+          <div id="avatar-bordered">
+            <div>
+              <img class="avatar-bordered" alt="avatar-bordered"
+                <% if user_signed_in? %>
+                   <%= cl_image_tag current_user.user_picture, class:"avatar dropdown-toggle", id:"navbarDropdown", data: {toggle:"dropdown"} %>
+                <% end %>
+                >
+            </div>
           </div>
           <div class="pl-3">
             <h3> <%= booking.user.username  %> </h3>
