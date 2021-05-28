@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     end
   end
 
+
   def update
     @booking = Booking.find(params[:id])
     if params[:status] == "Accepted"
