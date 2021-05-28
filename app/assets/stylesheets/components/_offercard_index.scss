@@ -1,4 +1,4 @@
-.card-product {
+.card-product-index {
   overflow: hidden;
   height: 300px;
   background: white;
@@ -7,6 +7,13 @@
   position: relative;
   border-radius: 4px;
   margin: 30px;
+}
+
+.img-index {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 img {
@@ -21,14 +28,14 @@ img {
 //   width: 85%;
 // }
 
-.card-product h2 {
+.card-product-index h2 {
   font-size: 32px;
   font-weight: bold;
   margin: 0;
   top: 10px;
 }
 
-.card-product p {
+.card-product-index p {
   font-size: 18px;
   line-height: 1;
   opacity: .7;
@@ -36,7 +43,7 @@ img {
   margin-top: 2px;
 }
 
-.card-product .card-product-infos {
+.card-product-index .card-product-infos-index {
   padding: 8px;
 }
 
@@ -94,7 +101,7 @@ img {
   float: left;
 }
 
-.link {
+.link-index {
   font-size: 30px;
   padding-top: 10px;
 }
