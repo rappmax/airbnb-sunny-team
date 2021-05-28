@@ -23,8 +23,8 @@
        <div class="cards justify-content-between grid-container ">
          <%  @tables = Table.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day) %>
            <% @tables.each do |table|  %>
-             <div class="card-product grid-items">
-                <div class="img img-offer">
+             <div class="card-product card-product-home grid-items">
+                <div class="img img-offer img-offer-home">
                    <%= cl_image_tag table.picture.key, crop: :fit %>
                 </div>
 
