@@ -56,6 +56,23 @@ h3 {
   color: white;
 }
 
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  font-size: 16px;
+  width: 80%;
+  float: right;
+  margin-right: 5px;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
 .btn-red {
   color: white;
   padding: 8px 24px;
