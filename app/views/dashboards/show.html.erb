@@ -74,14 +74,24 @@
           </div>
         </div>
 
+
+
+
         <div>
           <ul class="pt-3 pl-0">
             <li>Games won: 10/12</li>
             <li><%= booking.user.hand %> handed</li>
           </ul>
           <div class="buttons d-flex justify-content-between align-items-center">
-            <a class="btn-green mb-2" href="#">Accept</a>
-            <a class="btn-red mb-2" href="#">Decline</a>
+            <% if booking.status == "Pending" %>
+
+            <%= link_to "Accept", booking_path(booking, status: "Accepted"), class: "btn-green mv-2", method: "put" %>
+            <%= link_to "Decline", booking_path(booking, status: "Declined"), class: "btn-red mv-2", method: "put" %>
+          <% elsif booking.status == "Accepted" %>
+            <p>You accepted the booking</p>
+          <% elsif booking.status == "Declined" %>
+          <p>You declined the booking</p>
+          <% end %>
           </div>
         </div>
         </div>

@@ -20,7 +20,20 @@ class BookingsController < ApplicationController
     end
   end
 
+
+
   def update
+    @booking = Booking.find(params[:id])
+    if params[:status] == "Accepted"
+      @booking.status = "Accepted"
+    elsif params[:status] == "Declined"
+      @booking.status = "Declined"
+    end
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render :show
+    end
   end
 
   def edit
