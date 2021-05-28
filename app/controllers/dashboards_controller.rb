@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
     @host = current_user.tables.any?
     if @host
       @my_tables = current_user.tables
-      @booking_requests = Booking.where(flat_id: @my_tables.pluck(:id))
+      @booking_requests = Booking.where(table_id: @my_tables.pluck(:id))
     end
   end
 end
